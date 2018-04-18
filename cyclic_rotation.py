@@ -1,4 +1,7 @@
 def solution(A, K):
     if A:
-        A = [A[-1:] + A[:-1] for i in range(K)][-1]
-    return A
+        for i in range(K):
+            next_list = [A[-1]]
+            next_list.extend(A[:-1])
+            A = next_list
+    return(A)
