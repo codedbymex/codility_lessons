@@ -1,7 +1,5 @@
 def solution(A, K):
     if A:
-        for i in range(K):
-            next_list = [A[-1]]
-            next_list.extend(A[:-1])
-            A = next_list
+        next_list = lambda x: x[-1:] + x[:-1]
+        A = [next_list(A) for i in range(K)][-1]
     return A
